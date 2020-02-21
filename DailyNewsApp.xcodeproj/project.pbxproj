@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D33AC2123F5866B00FE0DD6 /* TopStoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D33AC2023F5866B00FE0DD6 /* TopStoriesCell.swift */; };
-		4D6F8BBA23F2E51B0085A134 /* JsonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F8BB923F2E51B0085A134 /* JsonDataModel.swift */; };
+		4D6F8BBA23F2E51B0085A134 /* JSONDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F8BB923F2E51B0085A134 /* JSONDataModel.swift */; };
 		4D960EEE23E864E300F7B62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D960EED23E864E300F7B62C /* AppDelegate.swift */; };
 		4D960EF023E864E300F7B62C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D960EEF23E864E300F7B62C /* SceneDelegate.swift */; };
 		4D960EF523E864E300F7B62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D960EF323E864E300F7B62C /* Main.storyboard */; };
@@ -17,12 +17,13 @@
 		4D960F0223E8666000F7B62C /* FeedsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D960F0123E8666000F7B62C /* FeedsTableView.swift */; };
 		4D960F0423E86D3000F7B62C /* LandpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D960F0323E86D3000F7B62C /* LandpageViewController.swift */; };
 		4D960F1023EA9D4900F7B62C /* FeedsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D960F0F23EA9D4900F7B62C /* FeedsCell.swift */; };
+		4DCAA00023FEA893008448BC /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA9FFF23FEA893008448BC /* ScrollViewController.swift */; };
 		4DEBC5F723F3994C0048A2AA /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEBC5F623F3994C0048A2AA /* DetailWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D33AC2023F5866B00FE0DD6 /* TopStoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesCell.swift; sourceTree = "<group>"; };
-		4D6F8BB923F2E51B0085A134 /* JsonDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataModel.swift; sourceTree = "<group>"; };
+		4D6F8BB923F2E51B0085A134 /* JSONDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataModel.swift; sourceTree = "<group>"; };
 		4D960EEA23E864E300F7B62C /* DailyNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D960EED23E864E300F7B62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D960EEF23E864E300F7B62C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 		4D960F0123E8666000F7B62C /* FeedsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableView.swift; sourceTree = "<group>"; };
 		4D960F0323E86D3000F7B62C /* LandpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandpageViewController.swift; sourceTree = "<group>"; };
 		4D960F0F23EA9D4900F7B62C /* FeedsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsCell.swift; sourceTree = "<group>"; };
+		4DCA9FFF23FEA893008448BC /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		4DEBC5F623F3994C0048A2AA /* DetailWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,10 +75,11 @@
 				4D33AC2023F5866B00FE0DD6 /* TopStoriesCell.swift */,
 				4D960F0123E8666000F7B62C /* FeedsTableView.swift */,
 				4D960EFB23E864E400F7B62C /* Info.plist */,
-				4D6F8BB923F2E51B0085A134 /* JsonDataModel.swift */,
+				4D6F8BB923F2E51B0085A134 /* JSONDataModel.swift */,
 				4D960F0323E86D3000F7B62C /* LandpageViewController.swift */,
 				4D960EF823E864E400F7B62C /* LaunchScreen.storyboard */,
 				4D960EF323E864E300F7B62C /* Main.storyboard */,
+				4DCA9FFF23FEA893008448BC /* ScrollViewController.swift */,
 				4D960EEF23E864E300F7B62C /* SceneDelegate.swift */,
 			);
 			path = DailyNewsApp;
@@ -156,7 +159,8 @@
 				4D33AC2123F5866B00FE0DD6 /* TopStoriesCell.swift in Sources */,
 				4D960EEE23E864E300F7B62C /* AppDelegate.swift in Sources */,
 				4D960F0223E8666000F7B62C /* FeedsTableView.swift in Sources */,
-				4D6F8BBA23F2E51B0085A134 /* JsonDataModel.swift in Sources */,
+				4D6F8BBA23F2E51B0085A134 /* JSONDataModel.swift in Sources */,
+				4DCAA00023FEA893008448BC /* ScrollViewController.swift in Sources */,
 				4D960EF023E864E300F7B62C /* SceneDelegate.swift in Sources */,
 				4D960F1023EA9D4900F7B62C /* FeedsCell.swift in Sources */,
 				4DEBC5F723F3994C0048A2AA /* DetailWebViewController.swift in Sources */,

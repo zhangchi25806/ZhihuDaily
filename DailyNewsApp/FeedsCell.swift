@@ -23,24 +23,22 @@ class FeedsCell: UITableViewCell {
     
     let cellView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGray
-        view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
     
-    let label1: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "label1textPlaceHolder"
-        label.textColor = UIColor.white
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor = UIColor.black
+        label.font = UIFont.boldSystemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
     
-    let label2: UILabel = {
+    let hintLabel: UILabel = {
         let label = UILabel()
         label.text = "label2textPlaceHolder"
         label.textColor = UIColor.gray
@@ -51,16 +49,19 @@ class FeedsCell: UITableViewCell {
     }()
     
     let imageView1: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 200, y: 5, width: 80, height: 80))
+        //let imageView = UIImageView(frame: CGRect(x: 200, y: 5, width: 75, height: 75))
+        let imageView = UIImageView()
+        //let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 10, height: 10)))
         imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
     }()
     
     func setupCell() {
         addSubview(cellView)
-        cellView.addSubview(label1)
-        cellView.addSubview(label2)
+        cellView.addSubview(titleLabel)
+        cellView.addSubview(hintLabel)
         cellView.addSubview(imageView1)
         self.selectionStyle = .none
         
@@ -70,15 +71,20 @@ class FeedsCell: UITableViewCell {
             cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             
-            label1.heightAnchor.constraint(equalToConstant: 80),
-            label1.widthAnchor.constraint(equalToConstant: 200),
-            label1.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            label1.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
+            titleLabel.heightAnchor.constraint(equalToConstant: 80),
+            titleLabel.widthAnchor.constraint(equalToConstant: 200),
+            titleLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
             
-            label2.heightAnchor.constraint(equalToConstant: 40),
-            label2.widthAnchor.constraint(equalToConstant: 200),
-            label2.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: 0),
-            label2.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
+            hintLabel.heightAnchor.constraint(equalToConstant: 40),
+            hintLabel.widthAnchor.constraint(equalToConstant: 200),
+            hintLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: 0),
+            hintLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
+            
+            imageView1.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -10),
+            imageView1.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+            imageView1.widthAnchor.constraint(equalToConstant: 75),
+            imageView1.heightAnchor.constraint(equalToConstant: 75)
         ])
     }
     

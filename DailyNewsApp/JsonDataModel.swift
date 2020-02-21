@@ -14,7 +14,7 @@ struct JSONStoriesLatest: Codable {
     let top_stories: [JSONTopStories]
 }
 
-struct JSONStoriesBefore: Codable {
+struct JSONDailyStories: Codable {
     let date: String
     let stories: [JSONStories]
 }

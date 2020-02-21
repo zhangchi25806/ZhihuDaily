@@ -25,23 +25,57 @@ class TopStoriesCell: UITableViewCell {
     
     let cellView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
     
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    let hintLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 11)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let imageView1: UIImageView = {
-        let iv = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         
         return iv
     }()
     
+    let imageHue: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        
+        return iv
+    }()
+    
+    let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.translatesAutoresizingMaskIntoConstraints = false
+        
+        return pc
+    }()
+    
     func setupCell() {
         addSubview(cellView)
         cellView.addSubview(imageView1)
-        
+        cellView.addSubview(imageHue)
+        cellView.addSubview(titleLabel)
+        cellView.addSubview(hintLabel)
+        cellView.addSubview(pageControl)
+
         self.selectionStyle = .none
         
         NSLayoutConstraint.activate([
@@ -49,6 +83,17 @@ class TopStoriesCell: UITableViewCell {
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
             cellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             cellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+            
+            titleLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
+            titleLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -50),
+            
+            hintLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
+            hintLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -20),
+            
+            pageControl.topAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -40),
+            pageControl.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: 0),
+            pageControl.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 80),
+            pageControl.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -80),
             
             imageView1.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 0),
             imageView1.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: 0),
@@ -71,3 +116,16 @@ class TopStoriesCell: UITableViewCell {
     }
 }
 
+extension UIImage {
+    static func gradientImageWithBounds(bounds: CGRect, colors: [CGColor]) -> UIImage {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors
+        
+        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
+        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
